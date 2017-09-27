@@ -14,11 +14,20 @@ import com.dav.hibernate.entity.Order;
 import com.dav.hibernate.entity.OrderDetail;
 import com.dav.hibernate.entity.Product;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ShopppingCartDaoImpl.
+ */
 @Repository
 public class ShopppingCartDaoImpl implements ShopppingCartDao {
+
+	/** The factory. */
 	@Autowired
 	SessionFactory factory;
 
+	/* (non-Javadoc)
+	 * @see com.dav.hibernate.dao.ShopppingCartDao#purchase(java.util.Collection)
+	 */
 	@Override
 	public void purchase(Collection<Product> items) throws Exception {
 		Session session = factory.openSession();

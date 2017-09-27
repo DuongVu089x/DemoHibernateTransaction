@@ -13,6 +13,7 @@ import com.dav.hibernate.dto.ShoppingCartDto;
 import com.dav.hibernate.service.ProductSerivce;
 import com.dav.hibernate.service.ShoppingCartSerivce;
 
+// TODO: Auto-generated Javadoc
 /**
  * Handles requests for the application home page.
  */
@@ -20,17 +21,24 @@ import com.dav.hibernate.service.ShoppingCartSerivce;
 @RequestMapping("home")
 public class HomeController {
 
+	/** The product serivce. */
 	@Autowired
 	ProductSerivce productSerivce;
 
+	/** The shopping cart serivce. */
 	@Autowired
 	ShoppingCartSerivce shoppingCartSerivce;
 
+	/** The cart dto. */
 	@Autowired
 	ShoppingCartDto cartDto;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
+	 *
+	 * @param locale the locale
+	 * @param model the model
+	 * @return the string
 	 */
 	@RequestMapping(value = "index", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
@@ -39,6 +47,12 @@ public class HomeController {
 		return "home";
 	}
 
+	/**
+	 * Purchase.
+	 *
+	 * @param model the model
+	 * @return the string
+	 */
 	@RequestMapping("purchase")
 	public String purchase(ModelMap model) {
 		try {
