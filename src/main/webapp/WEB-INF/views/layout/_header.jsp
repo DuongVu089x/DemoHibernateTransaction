@@ -18,7 +18,7 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <script src="js/bootstrap.min.js"></script>
-
+	<script src="js/login.js"></script>
 </head>
 <body>
     <div class="container">
