@@ -57,29 +57,4 @@ public class LoginController {
         model.addAttribute("usermedium", users.isEmpty() ? null : users.get(0));
         return "login";
     }
-
-    @RequestMapping(value = "high", method = RequestMethod.POST)
-    public String loginHigh(@Valid User userFormHigh, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
-            System.out.println("123");
-            return "login";
-        } else {
-            Session session = factory.getCurrentSession();
-            String hql = "SELECT * FROM users u WHERE u.username LIKE '" + userFormHigh.getUsername() + "' AND u.password LIKE '" + userFormHigh.getPassword() + "'";
-            SQLQuery query = session.createSQLQuery(hql).addEntity(User.class);
-            List<User> users = query.list();
-            model.addAttribute("userhigh", users.isEmpty() ? null : users.get(0));
-            return "login";
-        }
-    }
-
-    @RequestMapping(value = "impossible", method = RequestMethod.POST)
-    public String loginImpossible(@ModelAttribute(value = "userFormImpossible") User userForm, Model model) {
-        Session session = factory.getCurrentSession();
-        String hql = "SELECT * FROM users u WHERE u.username LIKE '" + userForm.getUsername() + "' AND u.password LIKE '" + userForm.getPassword() + "'";
-        SQLQuery query = session.createSQLQuery(hql).addEntity(User.class);
-        List<User> users = query.list();
-        model.addAttribute("userimpossible", users.isEmpty() ? null : users.get(0));
-        return "login";
-    }
 }
