@@ -107,7 +107,7 @@ p.text-center.solution, .error p {
 											<div class="tab-content">
 												<div class="tab-pane active" id="low">
 													<h4 class="text-center">Low</h4>
-													<form:form method="POST" modelAttribute="userForm"
+													<form:form method="POST" commandName="userFormLow"
 														class="form-signin" action="login/low.htm">
 														<spring:bind path="username">
 															<div
@@ -139,7 +139,7 @@ p.text-center.solution, .error p {
 												</div>
 												<div class="tab-pane" id="medium">
 													<h4 class="text-center">Medium</h4>
-													<form:form method="POST" modelAttribute="userFormMedium"
+													<form:form method="POST" commandName="userFormMedium"
 														class="form-signin" action="login/medium.htm"
 														onsubmit="return confirmForMedium();">
 														<spring:bind path="username">
@@ -199,7 +199,7 @@ p.text-center.solution, .error p {
 												<div class="tab-pane" id="impossible">
 													<h4 class="text-center">Impossible</h4>
 													<form:form method="POST"
-														modelAttribute="userFormImpossible" class="form-signin"
+														commandName="userFormImpossible" class="form-signin"
 														action="login/impossible.htm">
 														<spring:bind path="username">
 															<div
